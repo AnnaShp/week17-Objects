@@ -50,7 +50,7 @@ class Bike extends Transport {
         this.type = type,
             this.price = price,
             this.brand = brand,
-            this.brand = brand;
+            this.maxSpeed = maxSpeed;
         this.image = image;
     }
 
@@ -92,9 +92,9 @@ data.forEach((item) => {
 
 
 // Функция для вставки инфо на экран
-function insertInfo(arr) {
+function insertInfo(arr, containerId) {
     // Создание блока для вставки инфо
-    let container = document.querySelector('.container');
+    let container = document.getElementById(containerId);
 
     arr.forEach((item) => {
         let div = document.createElement('div');
@@ -128,8 +128,8 @@ function insertInfo(arr) {
 }
 
 // Вызов функции для каждого массива
-insertInfo(cars);
-insertInfo(bikes);
+insertInfo(cars, "carsContainer");
+insertInfo(bikes, "bikesContainer");
 
 
 
